@@ -18,7 +18,7 @@ namespace Windows
         // optional
         for (int i = 0; i < 5; i++)
         {
-            SendMessage(GetDlgItem(m_parentHwnd, m_iD)/*hwndList*/, LB_ADDSTRING, 0, (LPARAM)"Hello!");
+            SendMessage(GetDlgItem(m_parentHwnd, m_iD)/*hwndList*/, LB_ADDSTRING, 0, (LPARAM)TEXT("Hello!"));
         }
     }
 }

@@ -73,7 +73,7 @@ tOpenFolderDialog::tOpenFolderDialog()
 {
     // initialize com
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
-    m_path = new char[m_pathSize];
+    m_path = new TCHAR[m_pathSize];
     memset(m_path, 0, m_pathSize);
 }
 
@@ -83,7 +83,7 @@ tOpenFolderDialog::~tOpenFolderDialog()
     delete[] m_path;
 }
 
-void tOpenFolderDialog::Show(HWND hwnd, std::string title)
+void tOpenFolderDialog::Show(HWND hwnd, std::wstring title)
 {
     BROWSEINFO bI;
     bI.hwndOwner = hwnd;

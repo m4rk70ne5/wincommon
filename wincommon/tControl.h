@@ -2,7 +2,7 @@
 #define TCONTROL_H
 
 #include <windows.h>
-#include <wstring>
+#include <string>
 #include "DefaultHandlers.h"
 #include "DefaultResource.h"
 
@@ -11,8 +11,8 @@ namespace Windows
     class tControl
     {
         public:
-            tControl(int, int, int, int, char*, int(*)(tControl*) = ::Default,
-                     TCHAR* = "Static", DWORD = IDC_STATIC, HWND = NULL);
+            tControl(int, int, int, int, TCHAR*, int(*)(tControl*) = ::Default,
+                     TCHAR* = TEXT("Static"), DWORD = IDC_STATIC, HWND = NULL);
             HWND GetParentWindow() { return m_parentHwnd; };
             virtual void CreateMe(HWND);
             DWORD GetID() { return m_iD; };

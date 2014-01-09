@@ -1,4 +1,4 @@
-#include "../include/DialogTemplate.h"
+#include "DialogTemplate.h"
 
 void DialogTemplate::AlignToDword()
 {
