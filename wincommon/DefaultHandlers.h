@@ -6,7 +6,7 @@ namespace Windows
     class tControl;
 }
 
-int Default(Windows::tControl*);
-int Quit(Windows::tControl*); // closes parent dialog
+int Default(Windows::tControl*, PVOID);
+int Quit(Windows::tControl*, PVOID); // closes parent dialog
 
 #endif

@@ -62,7 +62,7 @@ BOOL CALLBACK tDialog::DialogProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
             for (std::vector<tControl*>::iterator iControl = controls.begin(); iControl != controls.end(); iControl++)
             {
                 if (LOWORD(wParam) == (*iControl)->GetID())
-                    (*iControl)->CommandHandler(*iControl);
+                    (*iControl)->CommandHandler(*iControl, (*iControl)->m_additionalInfo);
             }
             return TRUE;
     }
@@ -83,7 +83,7 @@ tOpenFolderDialog::~tOpenFolderDialog()
     delete[] m_path;
 }
 
-void tOpenFolderDialog::Show(HWND hwnd, std::wstring title)
+void tOpenFolderDialog::Show(HWND hwnd, std::wstring title, LPWSTR initialPath)
 {
     BROWSEINFO bI;
     bI.hwndOwner = hwnd;
@@ -91,8 +91,8 @@ void tOpenFolderDialog::Show(HWND hwnd, std::wstring title)
     bI.lpszTitle = title.c_str();
     bI.pszDisplayName = m_path;
     bI.ulFlags = BIF_NEWDIALOGSTYLE|BIF_RETURNONLYFSDIRS;
-    bI.lpfn = NULL;
-    bI.lParam = 0;
+    bI.lpfn = BrowseCallbackProc;
+    bI.lParam = (LPARAM)initialPath; // to start on an initial path
     bI.pidlRoot = NULL;
 
     LPITEMIDLIST lpItem = SHBrowseForFolder(&bI);
@@ -101,4 +101,21 @@ void tOpenFolderDialog::Show(HWND hwnd, std::wstring title)
     CoTaskMemFree(lpItem); // free pidl
 }
 
+int CALLBACK tOpenFolderDialog::BrowseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
+{
+	switch (uMsg)
+	{
+		case BFFM_INITIALIZED:
+		{
+			if (lpData != NULL)
+			{
+				SendMessage(hwnd, BFFM_SETSELECTION, TRUE, lpData);
+			}
+		}
+	}
+
+	return 0;
+}
+
+//end namespace
 }

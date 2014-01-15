@@ -5,9 +5,10 @@ extern HINSTANCE hInst;
 namespace Windows
 {
 
-tControl::tControl(int x, int y, int width, int height, TCHAR* label, int(*command)(tControl*), TCHAR* szclass, DWORD id, HWND parent) : CommandHandler(command),
-                    m_x(x), m_y(y), m_width(width), m_height(height), m_Label(label), m_class(szclass), m_iD(id), m_parentHwnd(parent)
+tControl::tControl(int x, int y, int width, int height, TCHAR* label, int(*command)(tControl*, PVOID), TCHAR* szclass, DWORD id, HWND parent) : 
+			CommandHandler(command), m_x(x), m_y(y), m_width(width), m_height(height), m_Label(label), m_class(szclass), m_iD(id), m_parentHwnd(parent)
 {
+	m_additionalInfo = NULL;
 }
 
 void tControl::CreateMe(HWND parentWindow)

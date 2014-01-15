@@ -11,12 +11,14 @@ namespace Windows
     class tControl
     {
         public:
-            tControl(int, int, int, int, TCHAR*, int(*)(tControl*) = ::Default,
+            tControl(int, int, int, int, TCHAR*, int(*)(tControl*, PVOID) = ::Default,
                      TCHAR* = TEXT("Static"), DWORD = IDC_STATIC, HWND = NULL);
             HWND GetParentWindow() { return m_parentHwnd; };
             virtual void CreateMe(HWND);
             DWORD GetID() { return m_iD; };
-            int (*CommandHandler)(tControl*);
+            int (*CommandHandler)(tControl*, PVOID);
+			void SetAdditinalInfo(PVOID info) { m_additionalInfo = info; };
+			PVOID m_additionalInfo;
         protected:
             int m_x, m_y, m_width, m_height;
             std::wstring m_Label, m_class;

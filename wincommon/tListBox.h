@@ -5,12 +5,15 @@
 
 namespace Windows
 {
-    class tListBox : tControl
+    class tListBox : public tControl
     {
+		protected:
+			void ClearAll(); // clears all contents
         public:
-            tListBox(TCHAR*, int, int, int, int, DWORD, int(*)(tControl*) = Default); // button text, x, y, w, h, ID
+            tListBox(TCHAR*, int, int, int, int, DWORD, int(*)(tControl*, PVOID) = Default); // button text, x, y, w, h, ID
             // in the future, make ID automatically obtained from an ID factory
             virtual void CreateMe(HWND);
+			int GetCurrentEntry(); // returns the index of the currently selected item
     };
 }
 

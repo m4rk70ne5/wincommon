@@ -30,11 +30,12 @@ namespace Windows
         public:
             tOpenFolderDialog();
             virtual ~tOpenFolderDialog();
-            void Show(HWND, std::wstring); // returns the path selected
+            void Show(HWND, std::wstring, LPWSTR); // returns the path selected
             TCHAR* GetPath() { return m_path; };
         protected:
             static const int m_pathSize = 255;
             TCHAR* m_path;
+			static int CALLBACK BrowseCallbackProc(HWND, UINT, LPARAM, LPARAM);
     };
 }
 
