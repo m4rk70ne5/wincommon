@@ -7,8 +7,11 @@ namespace Windows
 {
     class tButton : public tControl
     {
+		protected:
+			bool m_startDisabled;
         public:
-            tButton(TCHAR*, int, int, int, int, DWORD, int(*)(tControl*, PVOID) = ::Quit); // button text, x, y, w, h, ID, and command
+			// button text, x, y, w, h, ID, and command
+            tButton(TCHAR*, int, int, int, int, DWORD, int(*)(tControl*, PVOID) = ::Quit, bool = FALSE);
             // in the future, make ID automatically obtained from an ID factory
             virtual void CreateMe(HWND);
     };

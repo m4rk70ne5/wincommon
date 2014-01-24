@@ -14,6 +14,7 @@ namespace Windows
             tControl(int, int, int, int, TCHAR*, int(*)(tControl*, PVOID) = ::Default,
                      TCHAR* = TEXT("Static"), DWORD = IDC_STATIC, HWND = NULL);
             HWND GetParentWindow() { return m_parentHwnd; };
+			HWND GetHwnd() { return m_hwnd; };
             virtual void CreateMe(HWND);
             DWORD GetID() { return m_iD; };
             int (*CommandHandler)(tControl*, PVOID);

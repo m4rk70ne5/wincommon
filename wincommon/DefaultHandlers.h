@@ -1,6 +1,8 @@
 #ifndef DEFAULTHANDLERS_H
 #define DEFAULTHANDLERS_H
 
+#include <Windows.h>
+
 namespace Windows
 {
     class tControl;
