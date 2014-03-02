@@ -1,11 +1,21 @@
-﻿Build started 1/21/2014 9:09:08 PM.
-     1>Project "C:\Users\Mark\Documents\Visual Studio 2012\Projects\wincommon\wincommon\wincommon.vcxproj" on node 2 (Build target(s)).
-     1>InitializeBuildStatus:
+﻿Build started 3/1/2014 10:12:40 AM.
+     1>Project "C:\Users\Mark\Documents\Visual Studio 2012\Projects\wincommon\wincommon\wincommon.vcxproj" on node 2 (Rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\wincommon.lastbuildstate".
+       InitializeBuildStatus:
          Creating "Debug\wincommon.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt tButton.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\wincommon.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DefaultHandlers.cpp DialogTemplate.cpp tButton.cpp tControl.cpp tDialog.cpp tEdit.cpp tListBox.cpp
+         tListBox.cpp
+         tEdit.cpp
+         tDialog.cpp
+         tControl.cpp
          tButton.cpp
+         DialogTemplate.cpp
+         DefaultHandlers.cpp
+         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Mark\Documents\Visual Studio 2012\Projects\Demoz\Debug\wincommon.lib" /NOLOGO Debug\DefaultHandlers.obj
          Debug\DialogTemplate.obj
@@ -19,8 +29,8 @@
        FinalizeBuildStatus:
          Deleting file "Debug\wincommon.unsuccessfulbuild".
          Touching "Debug\wincommon.lastbuildstate".
-     1>Done Building Project "C:\Users\Mark\Documents\Visual Studio 2012\Projects\wincommon\wincommon\wincommon.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Mark\Documents\Visual Studio 2012\Projects\wincommon\wincommon\wincommon.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.97
+Time Elapsed 00:00:22.41

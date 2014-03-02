@@ -13,6 +13,7 @@ namespace Windows
         public:
             tControl(int, int, int, int, TCHAR*, int(*)(tControl*, PVOID) = ::Default,
                      TCHAR* = TEXT("Static"), DWORD = IDC_STATIC, HWND = NULL);
+			virtual ~tControl() { };
             HWND GetParentWindow() { return m_parentHwnd; };
 			HWND GetHwnd() { return m_hwnd; };
             virtual void CreateMe(HWND);

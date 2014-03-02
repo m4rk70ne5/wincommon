@@ -12,7 +12,8 @@ namespace Windows
         public:
             tListBox(TCHAR*, int, int, int, int, DWORD, int(*)(tControl*, PVOID) = Default); // button text, x, y, w, h, ID
             // in the future, make ID automatically obtained from an ID factory
-            virtual void CreateMe(HWND);
+			virtual ~tListBox() { };
+			virtual void CreateMe(HWND);
 			int GetCurrentEntry(); // returns the index of the currently selected item
     };
 }
