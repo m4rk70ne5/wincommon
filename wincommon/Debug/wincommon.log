@@ -1,4 +1,4 @@
-﻿Build started 3/1/2014 10:12:40 AM.
+﻿Build started 3/2/2014 10:27:52 AM.
      1>Project "C:\Users\Mark\Documents\Visual Studio 2012\Projects\wincommon\wincommon\wincommon.vcxproj" on node 2 (Rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Debug\wincommon.lastbuildstate".
@@ -33,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:22.41
+Time Elapsed 00:00:17.79
